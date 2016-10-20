@@ -11,7 +11,7 @@ import UIKit
 
 open class TimelineTableViewCell: UITableViewCell {
     
-    open var timelinePoint = TimelinePoint()
+    open var timelinePoint: TimelinePoint?
     
     open var pointDiameter: CGFloat = 6.0 {
         didSet {
@@ -29,6 +29,16 @@ open class TimelineTableViewCell: UITableViewCell {
                 lineWidth = 0.0
             } else if(lineWidth > 20.0) {
                 lineWidth = 20.0
+            }
+        }
+    }
+    
+    open var lineLeft: CGFloat = 50.0 {
+        didSet {
+            if (lineLeft < 0.0) {
+                lineLeft = 0.0
+            } else if (lineLeft > 100.0) {
+                lineLeft = 100.0
             }
         }
     }
@@ -68,7 +78,7 @@ open class TimelineTableViewCell: UITableViewCell {
         let context = UIGraphicsGetCurrentContext()
         context?.saveGState()
         
-        let x = self.layoutMargins.left + lineWidth / 2
+        let x = self.layoutMargins.left + lineLeft + lineWidth / 2
         var (startY, endY): (CGFloat, CGFloat) = (0, self.bounds.size.height)
         switch position {
         case .start:
@@ -79,7 +89,10 @@ open class TimelineTableViewCell: UITableViewCell {
             break
         }
 
-        drawLine(start: CGPoint(x: x + pointDiameter / 2, y: startY), end: CGPoint(x: x + pointDiameter / 2, y: endY))
+        let start = CGPoint(x: x + pointDiameter / 2, y: startY)
+        let end = CGPoint(x: x + pointDiameter / 2, y: endY)
+        drawLine(start: start, end: end)
+        drawLineInfo(start: start, end: end)
         drawPoint(CGPoint(x:x, y: self.bounds.size.height / 2))
         
         context?.restoreGState()
@@ -95,7 +108,23 @@ open class TimelineTableViewCell: UITableViewCell {
         shapeLayer.strokeColor = lineColor.cgColor
         shapeLayer.lineWidth = lineWidth
         
-        self.layer.addSublayer(shapeLayer)
+        self.contentView.layer.addSublayer(shapeLayer)
+    }
+    
+    fileprivate func drawLineInfo(start: CGPoint, end: CGPoint) {
+        if let lineInfo = timelinePoint?.lineInfo {
+            let offset: CGFloat = 5
+            let lineInfoLabel = UILabel()
+            lineInfoLabel.text = lineInfo
+            lineInfoLabel.font = UIFont.systemFont(ofSize: 8.0)
+            lineInfoLabel.textColor = lineColor
+            lineInfoLabel.lineBreakMode = .byWordWrapping
+            lineInfoLabel.numberOfLines = 0
+            lineInfoLabel.textAlignment = .center
+            lineInfoLabel.sizeToFit()
+            lineInfoLabel.frame = CGRect(origin: CGPoint(x: self.layoutMargins.left + lineLeft - lineInfoLabel.frame.width - offset, y: 0), size: lineInfoLabel.frame.size)
+            self.contentView.addSubview(lineInfoLabel)
+        }
     }
     
     fileprivate func drawPoint(_ point:CGPoint) {
@@ -107,6 +136,6 @@ open class TimelineTableViewCell: UITableViewCell {
         shapeLayer.fillColor = isPointFilled ? pointColor.cgColor : self.backgroundColor?.cgColor
         shapeLayer.lineWidth = lineWidth
         
-        self.layer.addSublayer(shapeLayer)
+        self.contentView.layer.addSublayer(shapeLayer)
     }
 }

@@ -35,7 +35,7 @@ class TimelineTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 20
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,10 +45,11 @@ class TimelineTableViewController: UITableViewController {
         if (indexPath.row == 0) {
             cell?.position = .start
         }
-        else if (indexPath.row == 2) {
+        else if (indexPath.row == 19) {
             cell?.position = .end
         }
-
+   
+        cell?.timelinePoint = TimelinePoint(lineInfo: "123 mins\n12345 m")
         return cell!
     }
 
