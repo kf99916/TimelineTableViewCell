@@ -128,6 +128,10 @@ open class TimelineTableViewCell: UITableViewCell {
     }
     
     fileprivate func drawPoint(_ point:CGPoint) {
+        if timelinePoint == nil {
+            return
+        }
+        
         let path = UIBezierPath(ovalIn: CGRect(x: point.x, y: point.y, width: pointDiameter, height: pointDiameter))
         
         let shapeLayer = CAShapeLayer()
