@@ -12,10 +12,12 @@ public struct TimelinePoint {
     public var title: String
     public var description: String?
     public var lineInfo: String?
+    public var image: UIImage?
     
-    public init(title: String, description: String?, lineInfo: String?) {
+    public init(title: String, description: String?, lineInfo: String?, image: UIImage?) {
         self.title = title
         self.description = description
         self.lineInfo = lineInfo
+        self.image = image
     }
 }

@@ -98,6 +98,7 @@ open class TimelineTableViewCell: UITableViewCell {
         drawPoint(point)
         if let bubbleRect = drawBubble(point: point) {
             drawDescription(bubbleRect: bubbleRect)
+            drawImage(bubbleRect: bubbleRect)
         }
         
         context?.restoreGState()
@@ -215,6 +216,22 @@ open class TimelineTableViewCell: UITableViewCell {
             width: calcWidth(),
             height: descriptionLabel.intrinsicContentSize.height)
         self.contentView.addSubview(descriptionLabel)
+    }
+    
+    fileprivate func drawImage(bubbleRect: CGRect) {
+        guard let image = timelinePoint?.image else {
+            return
+        }
+        
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(
+            x: bubbleRect.origin.x + bubbleRect.size.width + 20,
+            y: bubbleRect.origin.y,
+            width: bubbleRect.size.height,
+            height: bubbleRect.size.height)
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        self.contentView.addSubview(imageView)
     }
     
     fileprivate func calcWidth() -> CGFloat {
