@@ -49,7 +49,7 @@ class TimelineTableViewController: UITableViewController {
             cell?.position = .end
         }
    
-        cell?.timelinePoint = TimelinePoint(lineInfo: "123 mins\n12345 m")
+        cell?.timelinePoint = TimelinePoint(title:"23:59", lineInfo: "123 mins\n12345 m")
         return cell!
     }
 

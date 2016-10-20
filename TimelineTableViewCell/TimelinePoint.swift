@@ -9,9 +9,11 @@
 import Foundation
 
 public struct TimelinePoint {
+    public var title: String
     public var lineInfo: String?
     
-    public init(lineInfo: String?) {
+    public init(title: String, lineInfo: String?) {
+        self.title = title
         self.lineInfo = lineInfo
     }
 }
