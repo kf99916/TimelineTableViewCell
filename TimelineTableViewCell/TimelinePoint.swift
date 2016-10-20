@@ -10,10 +10,12 @@ import Foundation
 
 public struct TimelinePoint {
     public var title: String
+    public var description: String?
     public var lineInfo: String?
     
-    public init(title: String, lineInfo: String?) {
+    public init(title: String, description: String?, lineInfo: String?) {
         self.title = title
+        self.description = description
         self.lineInfo = lineInfo
     }
 }

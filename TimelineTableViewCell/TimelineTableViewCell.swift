@@ -96,7 +96,9 @@ open class TimelineTableViewCell: UITableViewCell {
         drawLine(start: start, end: end)
         drawLineInfo(point: point)
         drawPoint(point)
-        drawBubble(point: point)
+        if let bubbleRect = drawBubble(point: point) {
+            drawDescription(bubbleRect: bubbleRect)
+        }
         
         context?.restoreGState()
     }
@@ -148,9 +150,9 @@ open class TimelineTableViewCell: UITableViewCell {
         self.contentView.layer.addSublayer(shapeLayer)
     }
     
-    fileprivate func drawBubble(point: CGPoint) {
+    fileprivate func drawBubble(point: CGPoint) -> CGRect? {
         guard let timelinePoint = timelinePoint else {
-            return
+            return nil
         }
         
         let titleLabel = UILabel()
@@ -184,12 +186,35 @@ open class TimelineTableViewCell: UITableViewCell {
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = bubbleColor.cgColor
         
-        self.layer.addSublayer(shapeLayer)
+        self.contentView.layer.addSublayer(shapeLayer)
         
         let titleRect = CGRect(x: bubbleRect.origin.x + 10, y: bubbleRect.origin.y, width: bubbleRect.size.width - 15, height: bubbleRect.size.height - 1)
         titleLabel.textColor = titleColor
         titleLabel.frame = titleRect
-        self.addSubview(titleLabel)
+        self.contentView.addSubview(titleLabel)
+        
+        return bubbleRect
+    }
+    
+    fileprivate func drawDescription(bubbleRect: CGRect) {
+        guard let description = timelinePoint?.description else {
+            return
+        }
+        
+        let descriptionLabel = UILabel()
+        descriptionLabel.text = description
+        descriptionLabel.font = UIFont.systemFont(ofSize: 10.0)
+        descriptionLabel.textColor = descriptionColor
+        descriptionLabel.lineBreakMode = .byWordWrapping
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.preferredMaxLayoutWidth = calcWidth()
+        
+        descriptionLabel.frame = CGRect(
+            x: bubbleRect.origin.x,
+            y: bubbleRect.origin.y + bubbleRect.height + 3,
+            width: calcWidth(),
+            height: descriptionLabel.intrinsicContentSize.height)
+        self.contentView.addSubview(descriptionLabel)
     }
     
     fileprivate func calcWidth() -> CGFloat {
