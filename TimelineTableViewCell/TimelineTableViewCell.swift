@@ -80,7 +80,7 @@ open class TimelineTableViewCell: UITableViewCell {
         let context = UIGraphicsGetCurrentContext()
         context?.saveGState()
         
-        let point = CGPoint(x: self.layoutMargins.left + lineLeft + lineWidth / 2, y: self.bounds.size.height / 4)
+        let point = CGPoint(x: self.contentView.layoutMargins.left + lineLeft + lineWidth / 2, y: self.bounds.size.height / 4)
         var (startY, endY): (CGFloat, CGFloat) = (0, self.bounds.size.height)
         switch position {
         case .start:
@@ -125,13 +125,13 @@ open class TimelineTableViewCell: UITableViewCell {
         let offset: CGFloat = 5
         let lineInfoLabel = UILabel()
         lineInfoLabel.text = lineInfo
-        lineInfoLabel.font = UIFont.systemFont(ofSize: 8.0)
+        lineInfoLabel.font = UIFont.systemFont(ofSize: 10.0)
         lineInfoLabel.textColor = lineColor
         lineInfoLabel.lineBreakMode = .byWordWrapping
         lineInfoLabel.numberOfLines = 0
         lineInfoLabel.textAlignment = .center
         lineInfoLabel.sizeToFit()
-        lineInfoLabel.center = CGPoint(x: self.layoutMargins.left + lineLeft - lineInfoLabel.frame.width / 2 - offset, y: point.y * 3)
+        lineInfoLabel.center = CGPoint(x: self.contentView.layoutMargins.left + lineLeft - lineInfoLabel.frame.width / 2 - offset, y: point.y * 3)
         self.contentView.addSubview(lineInfoLabel)
     }
     
@@ -158,7 +158,7 @@ open class TimelineTableViewCell: UITableViewCell {
         
         let titleLabel = UILabel()
         titleLabel.text = timelinePoint.title
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 12.0)
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.numberOfLines = 0
         titleLabel.preferredMaxLayoutWidth = calcWidth()
@@ -204,7 +204,7 @@ open class TimelineTableViewCell: UITableViewCell {
         
         let descriptionLabel = UILabel()
         descriptionLabel.text = description
-        descriptionLabel.font = UIFont.systemFont(ofSize: 10.0)
+        descriptionLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
         descriptionLabel.textColor = descriptionColor
         descriptionLabel.lineBreakMode = .byWordWrapping
         descriptionLabel.numberOfLines = 0
@@ -235,6 +235,6 @@ open class TimelineTableViewCell: UITableViewCell {
     }
     
     fileprivate func calcWidth() -> CGFloat {
-        return self.bounds.width - (self.layoutMargins.left + self.layoutMargins.right) - lineLeft - pointDiameter - lineWidth - TimelineTableViewCell.gap * 1.5
+        return self.bounds.width - (self.contentView.layoutMargins.left + self.contentView.layoutMargins.right) - lineLeft - pointDiameter - lineWidth - TimelineTableViewCell.gap * 1.5
     }
 }
