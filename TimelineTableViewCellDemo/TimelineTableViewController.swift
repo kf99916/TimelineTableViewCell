@@ -19,6 +19,12 @@ class TimelineTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle(for: TimelineTableViewCell.self))
+        self.tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
+        
+        self.tableView.estimatedRowHeight = 300
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,13 +49,20 @@ class TimelineTableViewController: UITableViewController {
 
         // Configure the cell...
         if (indexPath.row == 0) {
-            cell?.position = .start
+            cell?.timeline.type = .start
         }
         else if (indexPath.row == 19) {
-            cell?.position = .end
+            cell?.timeline.type = .end
         }
+        else {
+            cell?.timeline.type = .middle
+        }
+        
+        cell?.titleLabel.text = "23:59"
+       // cell?.lineInfoLabel.text = "123 mins 12345 m"
+        cell?.descriptionLabel.text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam."
+        cell?.thumbnailImageView.image = UIImage(named: "Apple")
    
-        cell?.timelinePoint = TimelinePoint(title:"23:59", description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.", lineInfo: "123 mins\n12345 m", image: UIImage(named: "Apple"))
         return cell!
     }
 

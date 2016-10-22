@@ -9,15 +9,41 @@
 import Foundation
 
 public struct TimelinePoint {
-    public var title: String
-    public var description: String?
-    public var lineInfo: String?
-    public var image: UIImage?
+    internal var position = CGPoint(x: 0, y: 0)
     
-    public init(title: String, description: String?, lineInfo: String?, image: UIImage?) {
-        self.title = title
-        self.description = description
-        self.lineInfo = lineInfo
-        self.image = image
+    public var diameter: CGFloat = 6.0 {
+        didSet {
+            if (diameter < 0.0) {
+                diameter = 0.0
+            } else if (diameter > 100.0) {
+                diameter = 100.0
+            }
+        }
+    }
+    
+    public var lineWidth: CGFloat = 2.0 {
+        didSet {
+            if (lineWidth < 0.0) {
+                lineWidth = 0.0
+            } else if(lineWidth > 20.0) {
+                lineWidth = 20.0
+            }
+        }
+    }
+    
+    public var color = UIColor.black
+    
+    public var isFilled = false
+    
+    public func draw(view: UIView) {
+        let path = UIBezierPath(ovalIn: CGRect(x: position.x, y: position.y, width: diameter, height: diameter))
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = color.cgColor
+        shapeLayer.fillColor = isFilled ? color.cgColor : UIColor.white.cgColor
+        shapeLayer.lineWidth = lineWidth
+
+        view.layer.addSublayer(shapeLayer)
     }
 }

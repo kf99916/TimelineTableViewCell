@@ -14,16 +14,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineTableViewCell" id="dpm-pN-Psg" customClass="TimelineTableViewCell" customModule="TimelineTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dpm-pN-Psg" id="Xbx-EX-JCV">
-                                    <frame key="frameInset" width="375" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Pc2-4s-zYJ" id="WNX-eK-aSZ"/>
                             <outlet property="delegate" destination="Pc2-4s-zYJ" id="2JA-6v-Hex"/>

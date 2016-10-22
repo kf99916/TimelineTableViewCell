@@ -11,38 +11,23 @@ import UIKit
 
 open class TimelineTableViewCell: UITableViewCell {
     
-    open var timelinePoint: TimelinePoint?
+    @IBOutlet weak open var titleLabel: UILabel!
+    @IBOutlet weak open var descriptionLabel: UILabel!
+    @IBOutlet weak open var lineInfoLabel: UILabel!
+    @IBOutlet weak open var thumbnailImageView: UIImageView!
+    @IBOutlet weak var titleLabelLeadingConstraint: NSLayoutConstraint!
     
-    open var pointDiameter: CGFloat = 6.0 {
+    open var timelinePoint = TimelinePoint() {
         didSet {
-            if (pointDiameter < 0.0) {
-                pointDiameter = 0.0
-            } else if (pointDiameter > 100.0) {
-                pointDiameter = 100.0
-            }
+            self.setNeedsDisplay()
         }
     }
-    
-    open var lineWidth: CGFloat = 2.0 {
+    open var timeline = Timeline() {
         didSet {
-            if (lineWidth < 0.0) {
-                lineWidth = 0.0
-            } else if(lineWidth > 20.0) {
-                lineWidth = 20.0
-            }
+            self.setNeedsDisplay()
         }
     }
-    
-    open var lineLeft: CGFloat = 50.0 {
-        didSet {
-            if (lineLeft < 0.0) {
-                lineLeft = 0.0
-            } else if (lineLeft > 100.0) {
-                lineLeft = 100.0
-            }
-        }
-    }
-    
+
     open var bubbleRadius: CGFloat = 2.0 {
         didSet {
             if (bubbleRadius < 0.0) {
@@ -50,20 +35,12 @@ open class TimelineTableViewCell: UITableViewCell {
             } else if (bubbleRadius > 6.0) {
                 bubbleRadius = 6.0
             }
+            
+            self.setNeedsDisplay()
         }
     }
     
-    open var (pointColor, bubbleColor, titleColor, descriptionColor, lineColor) = (UIColor.black, UIColor(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0), UIColor.white, UIColor.gray, UIColor.black)
-
-    open var isPointFilled = false
-    
-    open var position = Position.middle
-    
-    fileprivate static let gap: CGFloat = 15.0
-    
-    public enum Position {
-        case start, middle, end
-    }
+    open var bubbleColor = UIColor(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)
     
     override open func awakeFromNib() {
         super.awakeFromNib()
@@ -77,104 +54,53 @@ open class TimelineTableViewCell: UITableViewCell {
     }
 
     override open func draw(_ rect: CGRect) {
-        let context = UIGraphicsGetCurrentContext()
-        context?.saveGState()
+        for layer in self.contentView.layer.sublayers! {
+            if layer is CAShapeLayer {
+                layer.removeFromSuperlayer()
+            }
+        }
         
-        let point = CGPoint(x: self.contentView.layoutMargins.left + lineLeft + lineWidth / 2, y: self.bounds.size.height / 4)
+        lineInfoLabel.sizeToFit()
+        titleLabel.sizeToFit()
+        descriptionLabel.sizeToFit()
+        
+        if (lineInfoLabel.intrinsicContentSize.width > 0) {
+            timeline.leftMargin = lineInfoLabel.intrinsicContentSize.width + 10
+            titleLabelLeadingConstraint.constant = 30
+        }
+        else {
+            lineInfoLabel.removeConstraints(lineInfoLabel.constraints)
+        }
+        
+        timelinePoint.position = CGPoint(x: timeline.leftMargin + timeline.width / 2, y: titleLabel.frame.origin.y + titleLabel.intrinsicContentSize.height / 2 - timelinePoint.diameter / 2)
         var (startY, endY): (CGFloat, CGFloat) = (0, self.bounds.size.height)
-        switch position {
+        switch timeline.type {
         case .start:
-            startY = point.y
+            startY = timelinePoint.position.y
         case .end:
-            endY = point.y
+            endY = timelinePoint.position.y
         default:
             break
         }
 
-        let start = CGPoint(x: point.x + pointDiameter / 2, y: startY)
-        let end = CGPoint(x: point.x + pointDiameter / 2, y: endY)
-        drawLine(start: start, end: end)
-        drawLineInfo(point: point)
-        drawPoint(point)
-        if let bubbleRect = drawBubble(point: point) {
-            drawDescription(bubbleRect: bubbleRect)
-            drawImage(bubbleRect: bubbleRect)
-        }
+        timeline.start = CGPoint(x: timelinePoint.position.x + timelinePoint.diameter / 2, y: startY)
+        timeline.end = CGPoint(x: timelinePoint.position.x + timelinePoint.diameter / 2, y: endY)
+        timeline.draw(view: self.contentView)
         
-        context?.restoreGState()
+        timelinePoint.draw(view: self.contentView)
+        
+        if let title = titleLabel.text, !title.isEmpty {
+            drawBubble()
+        }
     }
     
-    fileprivate func drawLine(start: CGPoint, end: CGPoint) {
-        let path = UIBezierPath()
-        path.move(to: start)
-        path.addLine(to: end)
-        
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
-        shapeLayer.strokeColor = lineColor.cgColor
-        shapeLayer.lineWidth = lineWidth
-        
-        self.contentView.layer.addSublayer(shapeLayer)
-    }
-    
-    fileprivate func drawLineInfo(point: CGPoint) {
-        guard let lineInfo = timelinePoint?.lineInfo else {
-            return
-        }
-        
-        let offset: CGFloat = 5
-        let lineInfoLabel = UILabel()
-        lineInfoLabel.text = lineInfo
-        lineInfoLabel.font = UIFont.systemFont(ofSize: 10.0)
-        lineInfoLabel.textColor = lineColor
-        lineInfoLabel.lineBreakMode = .byWordWrapping
-        lineInfoLabel.numberOfLines = 0
-        lineInfoLabel.textAlignment = .center
-        lineInfoLabel.sizeToFit()
-        lineInfoLabel.center = CGPoint(x: self.contentView.layoutMargins.left + lineLeft - lineInfoLabel.frame.width / 2 - offset, y: point.y * 3)
-        self.contentView.addSubview(lineInfoLabel)
-    }
-    
-    fileprivate func drawPoint(_ point: CGPoint) {
-        if timelinePoint == nil {
-            return
-        }
-        
-        let path = UIBezierPath(ovalIn: CGRect(x: point.x, y: point.y, width: pointDiameter, height: pointDiameter))
-        
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
-        shapeLayer.strokeColor = pointColor.cgColor
-        shapeLayer.fillColor = isPointFilled ? pointColor.cgColor : self.backgroundColor?.cgColor
-        shapeLayer.lineWidth = lineWidth
-        
-        self.contentView.layer.addSublayer(shapeLayer)
-    }
-    
-    fileprivate func drawBubble(point: CGPoint) -> CGRect? {
-        guard let timelinePoint = timelinePoint else {
-            return nil
-        }
-        
-        let titleLabel = UILabel()
-        titleLabel.text = timelinePoint.title
-        titleLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        titleLabel.lineBreakMode = .byWordWrapping
-        titleLabel.numberOfLines = 0
-        titleLabel.preferredMaxLayoutWidth = calcWidth()
-        
-        let maxTitleWidth = calcWidth()
-        var titleWidth = titleLabel.intrinsicContentSize.width + 20
-        if (titleWidth > maxTitleWidth) {
-            titleWidth = maxTitleWidth
-        }
-        
-        let offset: CGFloat = 13
+    fileprivate func drawBubble() {
+        let offset: CGFloat = 10
         let bubbleRect = CGRect(
-            x: point.x + pointDiameter + lineWidth / 2 + offset,
-            y: point.y - pointDiameter - titleLabel.intrinsicContentSize.height / 2,
-            width: titleWidth,
-            height: titleLabel.intrinsicContentSize.height + TimelineTableViewCell.gap)
+            x: self.contentView.layoutMargins.left + lineInfoLabel.intrinsicContentSize.width + titleLabelLeadingConstraint.constant - offset / 2,
+            y: titleLabel.frame.origin.y - offset / 2,
+            width: titleLabel.intrinsicContentSize.width + offset,
+            height: titleLabel.intrinsicContentSize.height + offset)
         
         let path = UIBezierPath(roundedRect: bubbleRect, cornerRadius: bubbleRadius)
         let startPoint = CGPoint(x: bubbleRect.origin.x, y: bubbleRect.origin.y + bubbleRect.height / 2 - 8)
@@ -182,59 +108,11 @@ open class TimelineTableViewCell: UITableViewCell {
         path.addLine(to: startPoint)
         path.addLine(to: CGPoint(x: bubbleRect.origin.x - 8, y: bubbleRect.origin.y + bubbleRect.height / 2))
         path.addLine(to: CGPoint(x: bubbleRect.origin.x, y: bubbleRect.origin.y + bubbleRect.height / 2 + 8))
-        
+
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = bubbleColor.cgColor
         
-        self.contentView.layer.addSublayer(shapeLayer)
-        
-        let titleRect = CGRect(x: bubbleRect.origin.x + 10, y: bubbleRect.origin.y, width: bubbleRect.size.width - 15, height: bubbleRect.size.height - 1)
-        titleLabel.textColor = titleColor
-        titleLabel.frame = titleRect
-        self.contentView.addSubview(titleLabel)
-        
-        return bubbleRect
-    }
-    
-    fileprivate func drawDescription(bubbleRect: CGRect) {
-        guard let description = timelinePoint?.description else {
-            return
-        }
-        
-        let descriptionLabel = UILabel()
-        descriptionLabel.text = description
-        descriptionLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
-        descriptionLabel.textColor = descriptionColor
-        descriptionLabel.lineBreakMode = .byWordWrapping
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.preferredMaxLayoutWidth = calcWidth()
-        
-        descriptionLabel.frame = CGRect(
-            x: bubbleRect.origin.x,
-            y: bubbleRect.origin.y + bubbleRect.height + 3,
-            width: calcWidth(),
-            height: descriptionLabel.intrinsicContentSize.height)
-        self.contentView.addSubview(descriptionLabel)
-    }
-    
-    fileprivate func drawImage(bubbleRect: CGRect) {
-        guard let image = timelinePoint?.image else {
-            return
-        }
-        
-        let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(
-            x: bubbleRect.origin.x + bubbleRect.size.width + 20,
-            y: bubbleRect.origin.y,
-            width: bubbleRect.size.height,
-            height: bubbleRect.size.height)
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        self.contentView.addSubview(imageView)
-    }
-    
-    fileprivate func calcWidth() -> CGFloat {
-        return self.bounds.width - (self.contentView.layoutMargins.left + self.contentView.layoutMargins.right) - lineLeft - pointDiameter - lineWidth - TimelineTableViewCell.gap * 1.5
+        self.contentView.layer.insertSublayer(shapeLayer, below: titleLabel.layer)
     }
 }

@@ -16,6 +16,8 @@
 		AAC049AD1DB89002003FEC67 /* TimelinePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC049AC1DB89002003FEC67 /* TimelinePoint.swift */; };
 		AAC049AF1DB89416003FEC67 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC049AE1DB89416003FEC67 /* TimelineTableViewController.swift */; };
 		AAC049B01DB89804003FEC67 /* TimelineTableViewCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC049891DB88F0A003FEC67 /* TimelineTableViewCell.framework */; };
+		AAE17F0A1DBA130A00A1C450 /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE17F091DBA130A00A1C450 /* TimelineTableViewCell.xib */; };
+		AAE17F0C1DBA66D000A1C450 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE17F0B1DBA66D000A1C450 /* Timeline.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		AAC049AA1DB88F38003FEC67 /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		AAC049AC1DB89002003FEC67 /* TimelinePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinePoint.swift; sourceTree = "<group>"; };
 		AAC049AE1DB89416003FEC67 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
+		AAE17F091DBA130A00A1C450 /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
+		AAE17F0B1DBA66D000A1C450 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +79,9 @@
 			children = (
 				AAC0498C1DB88F0A003FEC67 /* TimelineTableViewCell.h */,
 				AAC049AA1DB88F38003FEC67 /* TimelineTableViewCell.swift */,
+				AAE17F091DBA130A00A1C450 /* TimelineTableViewCell.xib */,
 				AAC049AC1DB89002003FEC67 /* TimelinePoint.swift */,
+				AAE17F0B1DBA66D000A1C450 /* Timeline.swift */,
 				AAC0498D1DB88F0A003FEC67 /* Info.plist */,
 			);
 			path = TimelineTableViewCell;
@@ -190,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE17F0A1DBA130A00A1C450 /* TimelineTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE17F0C1DBA66D000A1C450 /* Timeline.swift in Sources */,
 				AAC049AB1DB88F38003FEC67 /* TimelineTableViewCell.swift in Sources */,
 				AAC049AD1DB89002003FEC67 /* TimelinePoint.swift in Sources */,
 			);
@@ -431,6 +439,7 @@
 				AAC049931DB88F0A003FEC67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAC049A71DB88F18003FEC67 /* Build configuration list for PBXNativeTarget "TimelineTableViewCellDemo" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +448,7 @@
 				AAC049A91DB88F18003FEC67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
