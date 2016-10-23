@@ -9,8 +9,6 @@
 import Foundation
 
 public struct Timeline {
-    internal var (start, middle, end) = (CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0))
-    
     public var width: CGFloat = 2.0 {
         didSet {
             if (width < 0.0) {
@@ -21,9 +19,25 @@ public struct Timeline {
         }
     }
     
+    public var (frontColor, backColor) = (UIColor.black, UIColor.black)
+    
+    internal var (start, middle, end) = (CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0))
+    
     internal var leftMargin: CGFloat = 50.0
     
-    public var (frontColor, backColor) = (UIColor.clear, UIColor.black)
+    public init(width: CGFloat, frontColor: UIColor, backColor: UIColor) {
+        self.width = width
+        self.frontColor = frontColor
+        self.backColor = backColor
+    }
+    
+    public init(frontColor: UIColor, backColor: UIColor) {
+        self.init(width: 2, frontColor: frontColor, backColor: backColor)
+    }
+    
+    public init() {
+        self.init(width: 2, frontColor: UIColor.black, backColor: UIColor.black)
+    }
     
     public func draw(view: UIView) {
         draw(view: view, from: start, to: middle, color: frontColor)
