@@ -41,14 +41,16 @@ import TimelineTableViewCell
 #### Register Nib
 
 ```swift
-let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle(for: TimelineTableViewCell.self))
+let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", 
+	bundle: Bundle(for: TimelineTableViewCell.self))
 tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
 ```
 
 #### Dequeue
 
 ```swift
-let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as! TimelineTableViewCell
+let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", 
+	for: indexPath) as! TimelineTableViewCell
 
 // Configure TimelineTableViewCell...
 ```
