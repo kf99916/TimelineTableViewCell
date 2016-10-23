@@ -56,9 +56,13 @@ let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell"
 ### TimelinePoint
 
 The point in line is represented by a TimelinePoint object.
+
 `var diameter: CGFloat` diameter of a point in the line (default `6.0`)
+
 `var lineWidth: CGFloat` the thickness of the point (default `2.0`)
+
 `var color: UIColor` the color of each point in the line (defalut `UIColor.black`)
+
 `var isFilled: Bool` fills the point in the line (default: `false`)
 
 #### Initializers
@@ -82,8 +86,11 @@ TimelinePoint()
 ### Timeline
 
 The line in the cell is represented by a Timeline object and is divided by the point as the front line and the backline.
+
 `var width: CGFloat` the thickness of the line (default `2.0`)
+
 `var frontColor: UIColor` the color of the front line (defalut `UIColor.black`)
+
 `var backColor: UIColor` the color of the back line (defalut `UIColor.black`)
 
 #### Initializers
@@ -103,10 +110,15 @@ Timeline()
 ### TimelineTableViewCell
 
 `titleLabel: UILabel!` the title in the bubble
+
 `descriptionLabel: UILabel!` the description
+
 `lineInfoLabel: UILabel!` the information about line
+
 `thumbnailImageView: thumbnailImageView!` the thumbnail
+
 `var bubbleRadius: CGFloat` the radius of the bubble corners (default `2.0`)
+
 `var bubbleColor: UIColor` color of every bubble (default `.init(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)`)
 
 ## Demo
