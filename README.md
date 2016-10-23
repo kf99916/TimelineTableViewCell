@@ -41,8 +41,10 @@ import TimelineTableViewCell
 #### Register Nib
 
 ```swift
+let bundle = Bundle(for: TimelineTableViewCell.self)
+let nibUrl = bundle.url(forResource: "TimelineTableViewCell", withExtension: "bundle")
 let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", 
-	bundle: Bundle(for: TimelineTableViewCell.self))
+	bundle: Bundle(url: nibUrl!)!)
 tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
 ```
 
