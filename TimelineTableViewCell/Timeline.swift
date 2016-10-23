@@ -9,13 +9,7 @@
 import Foundation
 
 public struct Timeline {
-    internal var (start, end) = (CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0))
-    
-    public enum TimelineType {
-        case start, middle, end
-    }
-    
-    public var type: TimelineType = .middle
+    internal var (start, middle, end) = (CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0))
     
     public var width: CGFloat = 2.0 {
         didSet {
@@ -29,12 +23,17 @@ public struct Timeline {
     
     internal var leftMargin: CGFloat = 50.0
     
-    public var color = UIColor.black
+    public var (frontColor, backColor) = (UIColor.clear, UIColor.black)
     
     public func draw(view: UIView) {
+        draw(view: view, from: start, to: middle, color: frontColor)
+        draw(view: view, from: middle, to: end, color: backColor)
+    }
+    
+    fileprivate func draw(view: UIView, from: CGPoint, to: CGPoint, color: UIColor) {
         let path = UIBezierPath()
-        path.move(to: start)
-        path.addLine(to: end)
+        path.move(to: from)
+        path.addLine(to: to)
         
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath

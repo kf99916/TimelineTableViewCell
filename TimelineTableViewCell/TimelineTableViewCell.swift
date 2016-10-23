@@ -64,18 +64,10 @@ open class TimelineTableViewCell: UITableViewCell {
         descriptionLabel.sizeToFit()
         
         timelinePoint.position = CGPoint(x: timeline.leftMargin + timeline.width / 2, y: titleLabel.frame.origin.y + titleLabel.intrinsicContentSize.height / 2 - timelinePoint.diameter / 2)
-        var (startY, endY): (CGFloat, CGFloat) = (0, self.bounds.size.height)
-        switch timeline.type {
-        case .start:
-            startY = timelinePoint.position.y
-        case .end:
-            endY = timelinePoint.position.y
-        default:
-            break
-        }
 
-        timeline.start = CGPoint(x: timelinePoint.position.x + timelinePoint.diameter / 2, y: startY)
-        timeline.end = CGPoint(x: timelinePoint.position.x + timelinePoint.diameter / 2, y: endY)
+        timeline.start = CGPoint(x: timelinePoint.position.x + timelinePoint.diameter / 2, y: 0)
+        timeline.middle = CGPoint(x: timeline.start.x, y: timelinePoint.position.y)
+        timeline.end = CGPoint(x: timeline.start.x, y: self.bounds.size.height)
         timeline.draw(view: self.contentView)
         
         timelinePoint.draw(view: self.contentView)

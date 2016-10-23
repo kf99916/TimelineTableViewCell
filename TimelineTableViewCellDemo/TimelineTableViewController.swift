@@ -49,23 +49,26 @@ class TimelineTableViewController: UITableViewController {
 
         // Configure the cell...
         if (indexPath.row == 0) {
-            cell?.timeline.type = .start
+            cell?.timeline.frontColor = UIColor.clear
+            cell?.timeline.backColor = UIColor.black
             cell?.lineInfoLabel.text = "123 mins\n12345 m"
         }
         else if (indexPath.row == 19) {
-            cell?.timeline.type = .end
+            cell?.timeline.frontColor = UIColor.black
+            cell?.timeline.backColor = UIColor.clear
             cell?.lineInfoLabel.text = ""
         }
         else {
-            cell?.timeline.type = .middle
+            cell?.timeline.frontColor = UIColor.black
+            cell?.timeline.backColor = UIColor.black
             cell?.lineInfoLabel.text = "123 mins\n12345 m"
         }
         
         if (indexPath.row == 7 || indexPath.row == 10) {
-            cell?.timeline.color = UIColor.green
+            cell?.timeline.backColor = UIColor.green
         }
-        else {
-            cell?.timeline.color = UIColor.black
+        if (indexPath.row == 8 || indexPath.row == 11) {
+            cell?.timeline.frontColor = UIColor.green
         }
         
         if (indexPath.row == 5 || indexPath.row == 15) {
