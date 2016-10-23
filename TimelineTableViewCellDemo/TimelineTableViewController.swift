@@ -23,6 +23,7 @@ class TimelineTableViewController: UITableViewController {
         let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle(for: TimelineTableViewCell.self))
         self.tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
         
+        self.tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 20.0, 0.0)
         self.tableView.estimatedRowHeight = 300
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -50,16 +51,32 @@ class TimelineTableViewController: UITableViewController {
         // Configure the cell...
         if (indexPath.row == 0) {
             cell?.timeline.type = .start
+            cell?.lineInfoLabel.text = "123 mins\n12345 m"
         }
         else if (indexPath.row == 19) {
             cell?.timeline.type = .end
+            cell?.lineInfoLabel.text = ""
         }
         else {
             cell?.timeline.type = .middle
+            cell?.lineInfoLabel.text = "123 mins\n12345 m"
+        }
+        
+        if (indexPath.row == 7 || indexPath.row == 10) {
+            cell?.timeline.color = UIColor.green
+        }
+        else {
+            cell?.timeline.color = UIColor.black
+        }
+        
+        if (indexPath.row == 5 || indexPath.row == 15) {
+            cell?.timelinePoint.color = UIColor.red
+        }
+        else {
+            cell?.timelinePoint.color = UIColor.black
         }
         
         cell?.titleLabel.text = "23:59"
-       // cell?.lineInfoLabel.text = "123 mins 12345 m"
         cell?.descriptionLabel.text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam."
         cell?.thumbnailImageView.image = UIImage(named: "Apple")
    
