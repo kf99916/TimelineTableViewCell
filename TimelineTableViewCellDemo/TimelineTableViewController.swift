@@ -22,8 +22,7 @@ class TimelineTableViewController: UITableViewController {
         
         let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle(for: TimelineTableViewCell.self))
         self.tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
-        
-        self.tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 20.0, 0.0)
+
         self.tableView.estimatedRowHeight = 300
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }

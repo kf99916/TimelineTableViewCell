@@ -27,7 +27,7 @@ public struct Timeline {
         }
     }
     
-    internal var leftMargin: CGFloat = 20.0
+    internal var leftMargin: CGFloat = 50.0
     
     public var color = UIColor.black
     
