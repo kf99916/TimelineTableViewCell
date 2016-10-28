@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,47 +17,51 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mx5-YM-BCr" id="HxZ-h8-hOq">
-                <frame key="frameInset" width="375" height="87"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W66-Ck-wDF">
+                        <rect key="frame" x="5" y="43" width="50" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="UOG-v7-LrB"/>
                             <constraint firstAttribute="width" constant="50" id="wRF-2B-1fE"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Od-hl-ENS">
+                        <rect key="frame" x="88" y="23" width="0.0" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="sUz-jZ-KYy"/>
                         </constraints>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWm-f0-Lj3">
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                        <rect key="frame" x="81" y="58" width="286" height="21"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Rz-dN-Xtc">
+                        <rect key="frame" x="106" y="16" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="2Rz-dN-Xtc" secondAttribute="height" multiplier="1:1" id="fHM-VL-AsE"/>
-                            <constraint firstAttribute="width" constant="25" id="kgE-bL-wlT"/>
+                            <constraint firstAttribute="width" constant="30" id="kgE-bL-wlT"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="4Od-hl-ENS" firstAttribute="top" secondItem="HxZ-h8-hOq" secondAttribute="topMargin" constant="15" id="Ghc-36-MYK"/>
-                    <constraint firstItem="4Od-hl-ENS" firstAttribute="leading" secondItem="HxZ-h8-hOq" secondAttribute="leadingMargin" constant="70" id="LON-tF-nPL"/>
+                    <constraint firstItem="4Od-hl-ENS" firstAttribute="leading" secondItem="HxZ-h8-hOq" secondAttribute="leadingMargin" constant="80" id="LON-tF-nPL"/>
                     <constraint firstItem="LWm-f0-Lj3" firstAttribute="trailing" secondItem="HxZ-h8-hOq" secondAttribute="trailingMargin" id="Nv3-lm-stJ"/>
-                    <constraint firstItem="LWm-f0-Lj3" firstAttribute="top" secondItem="4Od-hl-ENS" secondAttribute="bottom" constant="8" id="VAh-OJ-UNe"/>
+                    <constraint firstItem="LWm-f0-Lj3" firstAttribute="top" secondItem="4Od-hl-ENS" secondAttribute="bottom" constant="20" id="VAh-OJ-UNe"/>
                     <constraint firstAttribute="bottom" secondItem="W66-Ck-wDF" secondAttribute="bottom" constant="20" id="VHg-zl-F2B"/>
                     <constraint firstItem="2Rz-dN-Xtc" firstAttribute="leading" secondItem="4Od-hl-ENS" secondAttribute="trailing" constant="18" id="WLC-pK-X7s"/>
-                    <constraint firstItem="4Od-hl-ENS" firstAttribute="bottom" secondItem="2Rz-dN-Xtc" secondAttribute="bottom" constant="-5" id="XhH-9u-yiG"/>
-                    <constraint firstItem="4Od-hl-ENS" firstAttribute="top" secondItem="2Rz-dN-Xtc" secondAttribute="top" constant="5" id="b9k-rm-hOZ"/>
+                    <constraint firstItem="4Od-hl-ENS" firstAttribute="bottom" secondItem="2Rz-dN-Xtc" secondAttribute="bottom" constant="-8" id="XhH-9u-yiG"/>
+                    <constraint firstItem="4Od-hl-ENS" firstAttribute="top" secondItem="2Rz-dN-Xtc" secondAttribute="top" constant="7" id="b9k-rm-hOZ"/>
                     <constraint firstItem="LWm-f0-Lj3" firstAttribute="leading" secondItem="W66-Ck-wDF" secondAttribute="trailing" constant="26" id="e9D-Rm-CSb"/>
                     <constraint firstItem="W66-Ck-wDF" firstAttribute="leading" secondItem="HxZ-h8-hOq" secondAttribute="leading" constant="5" id="ngi-V5-gD4"/>
                     <constraint firstAttribute="bottom" secondItem="LWm-f0-Lj3" secondAttribute="bottom" constant="8" id="u6o-9U-9uD"/>
