@@ -16,9 +16,23 @@
 		AAC049AD1DB89002003FEC67 /* TimelinePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC049AC1DB89002003FEC67 /* TimelinePoint.swift */; };
 		AAC049AF1DB89416003FEC67 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC049AE1DB89416003FEC67 /* TimelineTableViewController.swift */; };
 		AAC049B01DB89804003FEC67 /* TimelineTableViewCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC049891DB88F0A003FEC67 /* TimelineTableViewCell.framework */; };
+		AAD278181E9BECBE00ED95FE /* TimelineTableViewCell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAC049891DB88F0A003FEC67 /* TimelineTableViewCell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AAE17F0A1DBA130A00A1C450 /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE17F091DBA130A00A1C450 /* TimelineTableViewCell.xib */; };
 		AAE17F0C1DBA66D000A1C450 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE17F0B1DBA66D000A1C450 /* Timeline.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AAD278171E9BECB700ED95FE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AAD278181E9BECBE00ED95FE /* TimelineTableViewCell.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AAC049891DB88F0A003FEC67 /* TimelineTableViewCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimelineTableViewCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +153,7 @@
 				AAC049941DB88F18003FEC67 /* Sources */,
 				AAC049951DB88F18003FEC67 /* Frameworks */,
 				AAC049961DB88F18003FEC67 /* Resources */,
+				AAD278171E9BECB700ED95FE /* CopyFiles */,
 			);
 			buildRules = (
 			);
