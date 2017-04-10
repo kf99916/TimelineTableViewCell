@@ -114,6 +114,14 @@ The cell is represented by a TimelineTableViewCell object.
 `var bubbleRadius: CGFloat` the radius of the bubble corners (default `2.0`)  
 `var bubbleColor: UIColor` the color of every bubble (default `.init(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)`)
 
+## Apps using TimelineTableViewCell
+
+If you are using TimelineTableViewCell in your app and want to be listed here, simply create a pull request or let me know via github. I am always curious who is using my projects :)
+
+[Hikingbook](https://itunes.apple.com/app/id1067838748) - by Zheng-Xiang Ke
+
+![Hikingbook](apps/Hikingbook.png)
+
 ## Demo
 
 TimelineTableViewCellDemo is a simple demo app which shows the usage of TimelineTableViewCell in a storyboard.
