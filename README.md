@@ -12,20 +12,12 @@ TimelineTableViewCell is a simple timeline view implemented by UITableViewCell w
 ## Requirements
 
 - iOS 8.0 or higher
-- Swift 3.0
+- Swift 3.0 or higher
 
 ## Installation
 
-- [CocoaPods](http://cocoapods.org/):
-
 ```ruby
 pod "TimelineTableViewCell"
-```
-
-- [Swift Package Manager](https://swift.org/package-manager/):
-
-```
-.Package(url: "https://github.com/kf99916/TimelineTableViewCell.git", majorVersion: 1.0)
 ```
 
 ## Usage
