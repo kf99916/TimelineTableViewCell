@@ -108,7 +108,9 @@ The cell is represented by a TimelineTableViewCell object.
 
 ## Apps using TimelineTableViewCell
 
-If you are using TimelineTableViewCell in your app and want to be listed here, simply create a pull request or let me know via github. I am always curious who is using my projects :)
+If you are using TimelineTableViewCell in your app and want to be listed here, simply create a pull request.
+
+I am always curious who is using my projects :)
 
 [Hikingbook](https://itunes.apple.com/app/id1067838748) - by Zheng-Xiang Ke
 
