@@ -78,7 +78,7 @@ open class TimelineTableViewCell: UITableViewCell {
     }
     
     fileprivate func drawBubble() {
-        let offset: CGFloat = 15
+        let offset: CGFloat = 16
         let bubbleRect = CGRect(
             x: titleLabel.frame.origin.x - offset / 2,
             y: titleLabel.frame.origin.y - offset / 2,
