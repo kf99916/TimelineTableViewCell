@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TimelineTableViewCell'
-  s.version          = '1.0.1'
-  s.summary          = 'Simple timeline view implemented by UITableViewCell written in Swift 3.0'
+  s.version          = '1.1'
+  s.summary          = 'Simple timeline view implemented by UITableViewCell'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = 'TimelineTableViewCell is a simple timeline view implemented by UITableViewCell written in Swift 3.0. The UI design of TimelineTableViewCell is inspired by ISTimeline.'
+  s.description      = 'TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. The UI design of TimelineTableViewCell is inspired by ISTimeline.'
 
   s.homepage         = 'https://github.com/kf99916/TimelineTableViewCell'
   s.screenshots      = 'https://raw.githubusercontent.com/kf99916/TimelineTableViewCell/master/screenshots/timelineTableView.png'

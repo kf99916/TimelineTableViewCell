@@ -1,8 +1,8 @@
 # TimelineTableViewCell
 
-TimelineTableViewCell is a simple timeline view implemented by UITableViewCell written in Swift 3.0. The UI design of TimelineTableViewCell is inspired by [ISTimeline](https://github.com/instant-solutions/ISTimeline).
+TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. The UI design of TimelineTableViewCell is inspired by [ISTimeline](https://github.com/instant-solutions/ISTimeline).
 
-[![Language Swift 3.0](https://img.shields.io/badge/Language-Swift%203.0-orange.svg?style=flat)](https://swift.org)
+[![Language Swift](https://img.shields.io/badge/Language-Swift%203.0-orange.svg?style=flat)](https://swift.org)
 [![CocoaPods](https://img.shields.io/cocoapods/v/TimelineTableViewCell.svg)](#cocoapods)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![License](https://img.shields.io/github/license/kf99916/TimelineTableViewCell.svg)](LICENSE)
