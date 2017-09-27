@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 1.1
+- Migrate to Swift 4
+- Fix the issue: [There is a tiny white line between the arrow and the bubble in demo project.](https://github.com/kf99916/TimelineTableViewCell/issues/7)
+
 ## Version 1.0.1
 
 - Make the default font be large to easy to read
