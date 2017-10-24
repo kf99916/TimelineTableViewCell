@@ -15,6 +15,7 @@ open class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak open var descriptionLabel: UILabel!
     @IBOutlet weak open var lineInfoLabel: UILabel!
     @IBOutlet weak open var thumbnailImageView: UIImageView!
+    @IBOutlet weak open var illustrationImageView: UIImageView!
     
     open var timelinePoint = TimelinePoint() {
         didSet {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W66-Ck-wDF">
-                        <rect key="frame" x="5" y="56.5" width="50" height="24"/>
+                        <rect key="frame" x="5" y="57" width="50" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="UOG-v7-LrB"/>
                             <constraint firstAttribute="width" constant="50" id="wRF-2B-1fE"/>
@@ -52,14 +52,23 @@
                             <constraint firstAttribute="width" constant="30" id="kgE-bL-wlT"/>
                         </constraints>
                     </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aFP-zW-cVP">
+                        <rect key="frame" x="39" y="23" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="aFP-zW-cVP" secondAttribute="height" multiplier="1:1" id="Fzm-Ir-0Ob"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="aFP-zW-cVP" firstAttribute="top" secondItem="4Od-hl-ENS" secondAttribute="top" id="6JP-3c-8qb"/>
                     <constraint firstItem="4Od-hl-ENS" firstAttribute="top" secondItem="HxZ-h8-hOq" secondAttribute="topMargin" constant="15" id="Ghc-36-MYK"/>
                     <constraint firstItem="4Od-hl-ENS" firstAttribute="leading" secondItem="HxZ-h8-hOq" secondAttribute="leadingMargin" constant="80" id="LON-tF-nPL"/>
                     <constraint firstItem="LWm-f0-Lj3" firstAttribute="trailing" secondItem="HxZ-h8-hOq" secondAttribute="trailingMargin" id="Nv3-lm-stJ"/>
                     <constraint firstItem="LWm-f0-Lj3" firstAttribute="top" secondItem="4Od-hl-ENS" secondAttribute="bottom" constant="20" id="VAh-OJ-UNe"/>
                     <constraint firstItem="2Rz-dN-Xtc" firstAttribute="leading" secondItem="4Od-hl-ENS" secondAttribute="trailing" constant="18" id="WLC-pK-X7s"/>
                     <constraint firstItem="4Od-hl-ENS" firstAttribute="bottom" secondItem="2Rz-dN-Xtc" secondAttribute="bottom" constant="-8" id="XhH-9u-yiG"/>
+                    <constraint firstItem="aFP-zW-cVP" firstAttribute="trailing" secondItem="W66-Ck-wDF" secondAttribute="trailing" id="aHt-2S-3TK"/>
+                    <constraint firstItem="aFP-zW-cVP" firstAttribute="centerY" secondItem="4Od-hl-ENS" secondAttribute="centerY" id="arj-5s-tCI"/>
                     <constraint firstItem="4Od-hl-ENS" firstAttribute="top" secondItem="2Rz-dN-Xtc" secondAttribute="top" constant="7" id="b9k-rm-hOZ"/>
                     <constraint firstItem="LWm-f0-Lj3" firstAttribute="leading" secondItem="W66-Ck-wDF" secondAttribute="trailing" constant="26" id="e9D-Rm-CSb"/>
                     <constraint firstItem="W66-Ck-wDF" firstAttribute="leading" secondItem="HxZ-h8-hOq" secondAttribute="leading" constant="5" id="ngi-V5-gD4"/>
@@ -69,6 +78,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="descriptionLabel" destination="LWm-f0-Lj3" id="fpE-cB-Cup"/>
+                <outlet property="illustrationImageView" destination="aFP-zW-cVP" id="9AD-3h-Weg"/>
                 <outlet property="lineInfoLabel" destination="W66-Ck-wDF" id="WZr-av-HnT"/>
                 <outlet property="thumbnailImageView" destination="2Rz-dN-Xtc" id="hFp-fW-txb"/>
                 <outlet property="titleLabel" destination="4Od-hl-ENS" id="Zc2-fd-i6t"/>
