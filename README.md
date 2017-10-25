@@ -102,7 +102,8 @@ The cell is represented by a TimelineTableViewCell object.
 `titleLabel: UILabel!` the title in the bubble  
 `descriptionLabel: UILabel!` the description  
 `lineInfoLabel: UILabel!` the information about line  
-`thumbnailImageView: thumbnailImageView!` the thumbnail  
+`thumbnailImageView: UIImageView!` the thumbnail 
+`illustrationImageView: UIImageView!` the illustration  
 `var bubbleRadius: CGFloat` the radius of the bubble corners (default `2.0`)  
 `var bubbleColor: UIColor` the color of every bubble (default `.init(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)`)
 
