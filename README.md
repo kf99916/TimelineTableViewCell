@@ -2,10 +2,11 @@
 
 TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. The UI design of TimelineTableViewCell is inspired by [ISTimeline](https://github.com/instant-solutions/ISTimeline).
 
-[![Language Swift](https://img.shields.io/badge/Language-Swift%203.0-orange.svg?style=flat)](https://swift.org)
-[![CocoaPods](https://img.shields.io/cocoapods/v/TimelineTableViewCell.svg)](#cocoapods)
-[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![License](https://img.shields.io/github/license/kf99916/TimelineTableViewCell.svg)](LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/kf99916/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell/network)
+[![GitHub stars](https://img.shields.io/github/stars/kf99916/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell/stargazers)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/TimelineTableViewCell.svg)](https://cocoapods.org/pods/TimelineTableViewCell)
+[![Platform](https://img.shields.io/cocoapods/p/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell)
+[![GitHub license](https://img.shields.io/github/license/kf99916/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell/blob/master/LICENSE)
 
 ![TimelineTableViewCell](/screenshots/timelineTableView.png "TimelineTableViewCell")
 
