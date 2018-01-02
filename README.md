@@ -2,8 +2,9 @@
 
 TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. The UI design of TimelineTableViewCell is inspired by [ISTimeline](https://github.com/instant-solutions/ISTimeline).
 
-[![GitHub forks](https://img.shields.io/github/forks/kf99916/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell/network)
+[![CocoaPods](https://img.shields.io/cocoapods/dt/TimelineTableViewCell.svg)](https://cocoapods.org/pods/TimelineTableViewCell)
 [![GitHub stars](https://img.shields.io/github/stars/kf99916/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/kf99916/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell/network)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/TimelineTableViewCell.svg)](https://cocoapods.org/pods/TimelineTableViewCell)
 [![Platform](https://img.shields.io/cocoapods/p/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell)
 [![GitHub license](https://img.shields.io/github/license/kf99916/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell/blob/master/LICENSE)
