@@ -16,6 +16,9 @@ open class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak open var lineInfoLabel: UILabel!
     @IBOutlet weak open var thumbnailImageView: UIImageView!
     @IBOutlet weak open var illustrationImageView: UIImageView!
+
+    @IBOutlet weak var titleLabelLeftMargin: NSLayoutConstraint!
+    @IBOutlet weak var lineInfoLabelLeftMargin: NSLayoutConstraint!
     
     open var timelinePoint = TimelinePoint() {
         didSet {
@@ -59,9 +62,13 @@ open class TimelineTableViewCell: UITableViewCell {
                 layer.removeFromSuperlayer()
             }
         }
-        
-        lineInfoLabel.sizeToFit()
+
+        titleLabelLeftMargin.constant = timeline.leftMargin + 30
         titleLabel.sizeToFit()
+        
+        lineInfoLabelLeftMargin.constant = timeline.leftMargin - 55
+        lineInfoLabel.sizeToFit()
+        
         descriptionLabel.sizeToFit()
         
         timelinePoint.position = CGPoint(x: timeline.leftMargin + timeline.width / 2, y: titleLabel.frame.origin.y + titleLabel.intrinsicContentSize.height / 2 - timelinePoint.diameter / 2)
@@ -81,8 +88,8 @@ open class TimelineTableViewCell: UITableViewCell {
     fileprivate func drawBubble() {
         let offset: CGFloat = 16
         let bubbleRect = CGRect(
-            x: titleLabel.frame.origin.x - offset / 2,
-            y: titleLabel.frame.origin.y - offset / 2,
+            x: timelinePoint.position.x + timelinePoint.diameter + timeline.width + offset,
+            y: timelinePoint.position.y - timelinePoint.diameter - offset / 2,
             width: titleLabel.intrinsicContentSize.width + offset,
             height: titleLabel.intrinsicContentSize.height + offset)
         

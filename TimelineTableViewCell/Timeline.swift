@@ -21,9 +21,9 @@ public struct Timeline {
     
     public var (frontColor, backColor) = (UIColor.black, UIColor.black)
     
-    internal var (start, middle, end) = (CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0))
+    public var leftMargin: CGFloat = 60.0
     
-    internal var leftMargin: CGFloat = 60.0
+    internal var (start, middle, end) = (CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0))
     
     public init(width: CGFloat, frontColor: UIColor, backColor: UIColor) {
         self.width = width
