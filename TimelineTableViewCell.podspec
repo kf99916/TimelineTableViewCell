@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TimelineTableViewCell'
-  s.version          = '1.2'
+  s.version          = '1.3'
   s.summary          = 'Simple timeline view implemented by UITableViewCell'
 
 # This description is used to generate tags and improve search results.
