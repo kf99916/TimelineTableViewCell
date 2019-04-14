@@ -94,7 +94,7 @@ TimelinePoint()
 The line in the cell is represented by a Timeline object and is divided by the point as the front line and the backline.  
 `var width: CGFloat` the thickness of the line (default `2.0`)  
 `var frontColor: UIColor` the color of the front line (defalut `UIColor.black`)  
-`var backColor: UIColor` the color of the back line (defalut `UIColor.black`)
+`var backColor: UIColor` the color of the back line (defalut `UIColor.black`)  
 `var leftMargin: CGFloat` the left margin of the line (default `60.0`)
 
 #### Initializers
