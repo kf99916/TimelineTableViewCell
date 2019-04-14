@@ -10,12 +10,23 @@ TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. 
 [![Platform](https://img.shields.io/cocoapods/p/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell)
 [![GitHub license](https://img.shields.io/github/license/kf99916/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell/blob/master/LICENSE)
 
-![TimelineTableViewCell](/screenshots/timelineTableView.png "TimelineTableViewCell")
+![TimelineTableViewCell](/screenshots/timelineTableView.png 'TimelineTableViewCell')
 
 ## Requirements
 
 - iOS 8.0 or higher
-- Swift 3.0 or higher
+
+### v1.0.1-
+
+- Swift 3
+
+### v1.2-
+
+- Swift 4
+
+### v1.3
+
+- Swift 5
 
 ## Installation
 
@@ -38,7 +49,7 @@ import TimelineTableViewCell
 ```swift
 let bundle = Bundle(for: TimelineTableViewCell.self)
 let nibUrl = bundle.url(forResource: "TimelineTableViewCell", withExtension: "bundle")
-let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", 
+let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell",
 	bundle: Bundle(url: nibUrl!)!)
 tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
 ```
@@ -46,7 +57,7 @@ tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTa
 #### Dequeue
 
 ```swift
-let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", 
+let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell",
 	for: indexPath) as! TimelineTableViewCell
 
 // Configure TimelineTableViewCell...
@@ -84,6 +95,7 @@ The line in the cell is represented by a Timeline object and is divided by the p
 `var width: CGFloat` the thickness of the line (default `2.0`)  
 `var frontColor: UIColor` the color of the front line (defalut `UIColor.black`)  
 `var backColor: UIColor` the color of the back line (defalut `UIColor.black`)
+`var leftMargin: CGFloat` the left margin of the line (default `60.0`)
 
 #### Initializers
 
@@ -105,7 +117,7 @@ The cell is represented by a TimelineTableViewCell object.
 `titleLabel: UILabel!` the title in the bubble  
 `descriptionLabel: UILabel!` the description  
 `lineInfoLabel: UILabel!` the information about line  
-`thumbnailImageView: UIImageView!` the thumbnail 
+`thumbnailImageView: UIImageView!` the thumbnail
 `illustrationImageView: UIImageView!` the illustration  
 `var bubbleRadius: CGFloat` the radius of the bubble corners (default `2.0`)  
 `var bubbleColor: UIColor` the color of every bubble (default `.init(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)`)
