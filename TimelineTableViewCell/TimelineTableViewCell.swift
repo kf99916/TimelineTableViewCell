@@ -14,11 +14,13 @@ open class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak open var titleLabel: UILabel!
     @IBOutlet weak open var descriptionLabel: UILabel!
     @IBOutlet weak open var lineInfoLabel: UILabel!
-    @IBOutlet weak open var thumbnailImageView: UIImageView!
+    @IBOutlet weak internal var stackView: UIStackView!
     @IBOutlet weak open var illustrationImageView: UIImageView!
 
     @IBOutlet weak var titleLabelLeftMargin: NSLayoutConstraint!
     @IBOutlet weak var lineInfoLabelLeftMargin: NSLayoutConstraint!
+    
+    open var viewsInStackView: [UIView] = []
     
     open var timelinePoint = TimelinePoint() {
         didSet {
@@ -44,6 +46,8 @@ open class TimelineTableViewCell: UITableViewCell {
     }
     
     open var bubbleColor = UIColor(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)
+
+    fileprivate lazy var maxNumSubviews = Int(floor(stackView.frame.size.width / (stackView.frame.size.height + stackView.spacing))) - 1
     
     override open func awakeFromNib() {
         super.awakeFromNib()
@@ -82,6 +86,39 @@ open class TimelineTableViewCell: UITableViewCell {
         
         if let title = titleLabel.text, !title.isEmpty {
             drawBubble()
+        }
+        
+        stackView.arrangedSubviews.forEach { view in
+            stackView.removeArrangedSubview(view)
+            view.removeFromSuperview()
+        }
+        
+        let views = viewsInStackView.count <= maxNumSubviews ? viewsInStackView : Array(viewsInStackView[0..<maxNumSubviews])
+        views.forEach { view in
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.addConstraint(NSLayoutConstraint(item: view,
+                                                  attribute: NSLayoutConstraint.Attribute.width,
+                                                  relatedBy: NSLayoutConstraint.Relation.equal,
+                                                  toItem: view,
+                                                  attribute: NSLayoutConstraint.Attribute.height,
+                                                  multiplier: 1,
+                                                  constant: 0))
+            view.contentMode = .scaleAspectFill
+            view.clipsToBounds = true
+            stackView.addArrangedSubview(view)
+        }
+        
+        let diffNumViews = viewsInStackView.count - maxNumSubviews
+        if diffNumViews > 0 {
+            let label = UILabel(frame: CGRect.zero)
+            label.text = String(format: "+ %d", diffNumViews)
+            label.font = UIFont.preferredFont(forTextStyle: .headline)
+            stackView.addArrangedSubview(label)
+        }
+        else {
+            let spacerView = UIView()
+            spacerView.setContentHuggingPriority(.defaultLow, for: .horizontal)
+            stackView.addArrangedSubview(spacerView)
         }
     }
     
