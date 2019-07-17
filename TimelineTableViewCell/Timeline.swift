@@ -43,8 +43,11 @@ public struct Timeline {
         draw(view: view, from: start, to: middle, color: frontColor)
         draw(view: view, from: middle, to: end, color: backColor)
     }
-    
-    fileprivate func draw(view: UIView, from: CGPoint, to: CGPoint, color: UIColor) {
+}
+
+// MARK: - Fileprivate Methods
+fileprivate extension Timeline {
+    func draw(view: UIView, from: CGPoint, to: CGPoint, color: UIColor) {
         let path = UIBezierPath()
         path.move(to: from)
         path.addLine(to: to)

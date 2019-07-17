@@ -121,8 +121,11 @@ open class TimelineTableViewCell: UITableViewCell {
             stackView.addArrangedSubview(spacerView)
         }
     }
-    
-    fileprivate func drawBubble() {
+}
+
+// MARK: - Fileprivate Methods
+fileprivate extension TimelineTableViewCell {
+    func drawBubble() {
         let offset: CGFloat = 16
         let bubbleRect = CGRect(
             x: timelinePoint.position.x + timelinePoint.diameter + timeline.width + offset,
@@ -136,7 +139,7 @@ open class TimelineTableViewCell: UITableViewCell {
         path.addLine(to: startPoint)
         path.addLine(to: CGPoint(x: bubbleRect.origin.x - 8, y: bubbleRect.origin.y + bubbleRect.height / 2))
         path.addLine(to: CGPoint(x: bubbleRect.origin.x, y: bubbleRect.origin.y + bubbleRect.height / 2 + 8))
-
+        
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = bubbleColor.cgColor
