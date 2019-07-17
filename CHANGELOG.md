@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 2.0
+
+- Support multiple thumbnails with UIStackView.
+- Do not support iOS 9.0- anymore.
+
 ## Version 1.3
 
 - Migrate to Xcode 10.2 and Swift 5
