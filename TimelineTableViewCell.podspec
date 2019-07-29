@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TimelineTableViewCell'
-  s.version          = '1.3'
+  s.version          = '2.0'
   s.summary          = 'Simple timeline view implemented by UITableViewCell'
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/kf99916/TimelineTableViewCell.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'TimelineTableViewCell/**/*.swift'
   

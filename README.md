@@ -2,8 +2,6 @@
 
 TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. The UI design of TimelineTableViewCell is inspired by [ISTimeline](https://github.com/instant-solutions/ISTimeline).
 
-[![CocoaPods](https://img.shields.io/cocoapods/dt/TimelineTableViewCell.svg)](https://cocoapods.org/pods/TimelineTableViewCell)
-[![CocoaPods](https://img.shields.io/cocoapods/at/TimelineTableViewCell.svg)](https://cocoapods.org/pods/TimelineTableViewCell)
 [![GitHub stars](https://img.shields.io/github/stars/kf99916/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/kf99916/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell/network)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/TimelineTableViewCell.svg)](https://cocoapods.org/pods/TimelineTableViewCell)
@@ -14,7 +12,7 @@ TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. 
 
 ## Requirements
 
-- iOS 8.0 or higher
+- iOS 9.0 or higher
 
 ### v1.0.1-
 
@@ -27,6 +25,11 @@ TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. 
 ### v1.3
 
 - Swift 5
+
+### v2.0
+
+- Breaking Changes for v1.3-: thumbnailImageView is replaced with UIStackView to support multiple thumbnails.
+- Do not support iOS9.0- anymore.
 
 ## Installation
 
@@ -94,7 +97,7 @@ TimelinePoint()
 The line in the cell is represented by a Timeline object and is divided by the point as the front line and the backline.  
 `var width: CGFloat` the thickness of the line (default `2.0`)  
 `var frontColor: UIColor` the color of the front line (defalut `UIColor.black`)  
-`var backColor: UIColor` the color of the back line (defalut `UIColor.black`)
+`var backColor: UIColor` the color of the back line (defalut `UIColor.black`)  
 `var leftMargin: CGFloat` the left margin of the line (default `60.0`)
 
 #### Initializers
@@ -121,6 +124,7 @@ The cell is represented by a TimelineTableViewCell object.
 `illustrationImageView: UIImageView!` the illustration  
 `var bubbleRadius: CGFloat` the radius of the bubble corners (default `2.0`)  
 `var bubbleColor: UIColor` the color of every bubble (default `.init(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)`)
+`viewsInStackView: [UIView]` the views in the stack view.
 
 ## Apps using TimelineTableViewCell
 
