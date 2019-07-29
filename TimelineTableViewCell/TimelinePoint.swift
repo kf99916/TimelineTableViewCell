@@ -56,7 +56,7 @@ public struct TimelinePoint {
     
     public func draw(view: UIView) {
         let path = UIBezierPath(ovalIn: CGRect(x: position.x, y: position.y, width: diameter, height: diameter))
-        
+
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.strokeColor = color.cgColor
