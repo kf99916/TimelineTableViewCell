@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public struct TimelinePoint {
     public var diameter: CGFloat = 6.0 {
@@ -55,8 +56,8 @@ public struct TimelinePoint {
     }
     
     public func draw(view: UIView) {
-        let path = UIBezierPath(ovalIn: CGRect(x: position.x, y: position.y, width: diameter, height: diameter))
-        
+        let path = UIBezierPath(ovalIn: CGRect(x: position.x - diameter / 2, y: position.y - diameter / 2, width: diameter, height: diameter))
+
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.strokeColor = color.cgColor

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83D3611722EF001400A105BD /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83D3611622EF001400A105BD /* TimelineTableViewCell.xib */; };
 		AAC0498E1DB88F0A003FEC67 /* TimelineTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AAC0498C1DB88F0A003FEC67 /* TimelineTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAC0499B1DB88F18003FEC67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0499A1DB88F18003FEC67 /* AppDelegate.swift */; };
 		AAC049A01DB88F18003FEC67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC0499E1DB88F18003FEC67 /* Main.storyboard */; };
@@ -17,7 +18,6 @@
 		AAC049AF1DB89416003FEC67 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC049AE1DB89416003FEC67 /* TimelineTableViewController.swift */; };
 		AAC049B01DB89804003FEC67 /* TimelineTableViewCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC049891DB88F0A003FEC67 /* TimelineTableViewCell.framework */; };
 		AAD278181E9BECBE00ED95FE /* TimelineTableViewCell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAC049891DB88F0A003FEC67 /* TimelineTableViewCell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AAE17F0A1DBA130A00A1C450 /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE17F091DBA130A00A1C450 /* TimelineTableViewCell.xib */; };
 		AAE17F0C1DBA66D000A1C450 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE17F0B1DBA66D000A1C450 /* Timeline.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		83D3611622EF001400A105BD /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
 		AAC049891DB88F0A003FEC67 /* TimelineTableViewCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimelineTableViewCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC0498C1DB88F0A003FEC67 /* TimelineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineTableViewCell.h; sourceTree = "<group>"; };
 		AAC0498D1DB88F0A003FEC67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		AAC049AA1DB88F38003FEC67 /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		AAC049AC1DB89002003FEC67 /* TimelinePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinePoint.swift; sourceTree = "<group>"; };
 		AAC049AE1DB89416003FEC67 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
-		AAE17F091DBA130A00A1C450 /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
 		AAE17F0B1DBA66D000A1C450 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +93,7 @@
 			children = (
 				AAC0498C1DB88F0A003FEC67 /* TimelineTableViewCell.h */,
 				AAC049AA1DB88F38003FEC67 /* TimelineTableViewCell.swift */,
-				AAE17F091DBA130A00A1C450 /* TimelineTableViewCell.xib */,
+				83D3611622EF001400A105BD /* TimelineTableViewCell.xib */,
 				AAC049AC1DB89002003FEC67 /* TimelinePoint.swift */,
 				AAE17F0B1DBA66D000A1C450 /* Timeline.swift */,
 				AAC0498D1DB88F0A003FEC67 /* Info.plist */,
@@ -211,7 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE17F0A1DBA130A00A1C450 /* TimelineTableViewCell.xib in Resources */,
+				83D3611722EF001400A105BD /* TimelineTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
