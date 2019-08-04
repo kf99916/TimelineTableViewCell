@@ -9,6 +9,7 @@ TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. 
 [![GitHub license](https://img.shields.io/github/license/kf99916/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell/blob/master/LICENSE)
 
 ![TimelineTableViewCell](/screenshots/timelineTableView.png 'TimelineTableViewCell')
+![TimelineTableViewCell](/screenshots/timelineTableView 2.png 'TimelineTableViewCell')
 
 ## Requirements
 
@@ -26,7 +27,7 @@ TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. 
 
 - Swift 5
 
-### v2.0
+### v2.0+
 
 - Breaking Changes for v1.3-: thumbnailImageView is replaced with UIStackView to support multiple thumbnails.
 - Do not support iOS9.0- anymore.
@@ -125,6 +126,7 @@ The cell is represented by a TimelineTableViewCell object.
 `var bubbleRadius: CGFloat` the radius of the bubble corners (default `2.0`)  
 `var bubbleColor: UIColor` the color of every bubble (default `.init(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)`)
 `viewsInStackView: [UIView]` the views in the stack view.
+`var bubbleEnabled: Bool` Enable draw bubble (default `true`)
 
 ## Apps using TimelineTableViewCell
 
