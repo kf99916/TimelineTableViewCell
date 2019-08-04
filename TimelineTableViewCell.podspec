@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TimelineTableViewCell'
-  s.version          = '2.0'
+  s.version          = '2.1'
   s.summary          = 'Simple timeline view implemented by UITableViewCell'
 
 # This description is used to generate tags and improve search results.
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.description      = 'TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. The UI design of TimelineTableViewCell is inspired by ISTimeline.'
 
   s.homepage         = 'https://github.com/kf99916/TimelineTableViewCell'
-  s.screenshots      = 'https://raw.githubusercontent.com/kf99916/TimelineTableViewCell/master/screenshots/timelineTableView.png'
+  s.screenshots      = ['https://raw.githubusercontent.com/kf99916/TimelineTableViewCell/master/screenshots/timelineTableView.png', 'https://raw.githubusercontent.com/kf99916/TimelineTableViewCell/master/screenshots/timelineTableView-2.png']
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Zheng-Xiang Ke' => 'kf99916@gmail.com' }
   s.source           = { :git => 'https://github.com/kf99916/TimelineTableViewCell.git', :tag => s.version.to_s }
