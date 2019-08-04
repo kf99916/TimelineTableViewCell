@@ -9,7 +9,7 @@ TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. 
 [![GitHub license](https://img.shields.io/github/license/kf99916/TimelineTableViewCell.svg)](https://github.com/kf99916/TimelineTableViewCell/blob/master/LICENSE)
 
 ![TimelineTableViewCell](/screenshots/timelineTableView.png 'TimelineTableViewCell')
-![TimelineTableViewCell](/screenshots/timelineTableView 2.png 'TimelineTableViewCell')
+![TimelineTableViewCell](/screenshots/timelineTableView-2.png 'TimelineTableViewCell')
 
 ## Requirements
 
