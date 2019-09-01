@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W66-Ck-wDF">
-                        <rect key="frame" x="55" y="61" width="0.0" height="0.0"/>
+                        <rect key="frame" x="0.0" y="61" width="55" height="0.0"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -51,6 +51,7 @@
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="W66-Ck-wDF" firstAttribute="leading" secondItem="HxZ-h8-hOq" secondAttribute="leading" id="KIc-ik-mFn"/>
                     <constraint firstItem="Bvw-S8-TSj" firstAttribute="top" secondItem="HxZ-h8-hOq" secondAttribute="top" constant="8" id="Pvp-pi-ekz"/>
                     <constraint firstItem="4Od-hl-ENS" firstAttribute="leading" secondItem="HxZ-h8-hOq" secondAttribute="leading" constant="88" id="W5Z-YV-Yjl"/>
                     <constraint firstAttribute="bottomMargin" secondItem="LWm-f0-Lj3" secondAttribute="bottom" id="XMs-7H-S0s"/>
