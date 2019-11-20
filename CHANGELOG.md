@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 2.2
+
+- Support Swift Package Manager
+
 ## Version 2.1
 
 - Make bubble togglable:[#14](https://github.com/kf99916/TimelineTableViewCell/pull/14)
