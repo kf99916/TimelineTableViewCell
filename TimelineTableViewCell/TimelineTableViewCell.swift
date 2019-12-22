@@ -135,8 +135,8 @@ fileprivate extension TimelineTableViewCell {
         let bubbleRect = CGRect(
             x: titleLabelLeftMargin.constant - padding,
             y: titleLabel.frame.minY - padding,
-            width: titleLabel.intrinsicContentSize.width + padding * 2,
-            height: titleLabel.intrinsicContentSize.height + padding * 2)
+            width: titleLabel.frame.size.width + padding * 2,
+            height: titleLabel.frame.size.height + padding * 2)
 
         let path = UIBezierPath(roundedRect: bubbleRect, cornerRadius: bubbleRadius)
         let startPoint = CGPoint(x: bubbleRect.origin.x, y: bubbleRect.origin.y + bubbleRect.height / 2 - 8)
