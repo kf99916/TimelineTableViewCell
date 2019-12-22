@@ -1,5 +1,9 @@
 # Changelog
 
+## Versiion 2.2.1
+
+- Fix #16.
+
 ## Version 2.2
 
 - Support Swift Package Manager
