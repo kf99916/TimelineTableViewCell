@@ -50,7 +50,7 @@ open class TimelineTableViewCell: UITableViewCell {
     open var bubbleColor = UIColor(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)
     open var bubbleEnabled = true
 
-    fileprivate lazy var maxNumSubviews = Int(floor(stackView.frame.size.width / (stackView.frame.size.height + stackView.spacing))) - 1
+    fileprivate lazy var maxNumSubviews = max(Int(floor(stackView.frame.size.width / (stackView.frame.size.height + stackView.spacing))) - 1, 0)
     
     override open func awakeFromNib() {
         super.awakeFromNib()
