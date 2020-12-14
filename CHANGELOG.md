@@ -1,5 +1,9 @@
 # Changelog
 
+## Versiion 2.2.2
+
+- Fix [#19](https://github.com/kf99916/TimelineTableViewCell/issues/19).
+
 ## Versiion 2.2.1
 
 - Fix [#16](https://github.com/kf99916/TimelineTableViewCell/issues/16).
