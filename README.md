@@ -13,7 +13,7 @@ TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. 
 
 ## Requirements
 
-- iOS 9.0 or higher
+- iOS 12.0 or higher
 
 ### v1.0.1-
 
