@@ -66,6 +66,16 @@ import TimelineTableViewCell
 
 #### Register Nib
 
+After 2.2.3 with SPM:
+```swift
+let bundle = Bundle(for: TimelineTableViewCell.self)
+guard let nibUrl = bundle.url(forResource: "TimelineTableViewCell_TimelineTableViewCell", withExtension: "bundle"),
+      let nibBundle = Bundle(url: nibUrl) else { return } // guard is optional
+let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: nibBundle)
+controller.tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
+```
+
+Before 2.2.3 with CocoaPods:
 ```swift
 let bundle = Bundle(for: TimelineTableViewCell.self)
 let nibUrl = bundle.url(forResource: "TimelineTableViewCell", withExtension: "bundle")
