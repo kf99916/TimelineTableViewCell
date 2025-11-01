@@ -75,7 +75,7 @@ let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: n
 controller.tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
 ```
 
-Before 2.2.3 with CocoaPods:
+with CocoaPods:
 ```swift
 let bundle = Bundle(for: TimelineTableViewCell.self)
 let nibUrl = bundle.url(forResource: "TimelineTableViewCell", withExtension: "bundle")
