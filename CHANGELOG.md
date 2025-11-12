@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 2.2.3
+
+- Fix [#21](https://github.com/kf99916/TimelineTableViewCell/issues/21).
+- Minimum iOS version is now 12
+
 ## Versiion 2.2.2
 
 - Fix [#19](https://github.com/kf99916/TimelineTableViewCell/issues/19).

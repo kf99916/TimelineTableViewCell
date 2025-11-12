@@ -13,7 +13,7 @@ TimelineTableViewCell is a simple timeline view implemented by UITableViewCell. 
 
 ## Requirements
 
-- iOS 9.0 or higher
+- iOS 12.0 or higher
 
 ### v1.0.1-
 
@@ -66,6 +66,16 @@ import TimelineTableViewCell
 
 #### Register Nib
 
+After 2.2.3 with SPM:
+```swift
+let bundle = Bundle(for: TimelineTableViewCell.self)
+guard let nibUrl = bundle.url(forResource: "TimelineTableViewCell_TimelineTableViewCell", withExtension: "bundle"),
+      let nibBundle = Bundle(url: nibUrl) else { return } // guard is optional
+let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: nibBundle)
+controller.tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
+```
+
+with CocoaPods:
 ```swift
 let bundle = Bundle(for: TimelineTableViewCell.self)
 let nibUrl = bundle.url(forResource: "TimelineTableViewCell", withExtension: "bundle")
